@@ -6,6 +6,7 @@
 
     class OnlineTest extends JFrame implements ActionListener
     {
+        QuestionHandler questions = new QuestionHandler();
         JLabel l;
         JRadioButton jb[]=new JRadioButton[5];
         JButton b1,b2;
@@ -99,7 +100,8 @@
         void set()
         {
             jb[4].setSelected(true);
-            if(current==0)
+            next();
+            /*if(current==0)
             {
                 l.setText("Que1: Which one among these is not a primitive datatype?");
                 jb[0].setText("int");jb[1].setText("Float");jb[2].setText("boolean");jb[3].setText("char");
@@ -151,12 +153,23 @@
                 l.setText("Que10: Which one among these is not a valid component?");
                 jb[0].setText("JButton");jb[1].setText("JList");jb[2].setText("JButtonGroup");
                 jb[3].setText("JTextArea");
-            }
+            }*/
             l.setBounds(30,40,450,20);
             for(int i=0,j=0;i<=90;i+=30,j++)
                 jb[j].setBounds(50,80+i,200,20);
         }
-        boolean check()
+        private void next(){
+           QuestionClass question = this.questions.getQuestionAtIndex(current);
+           l.setText(question.question);
+           for(int i=0; i < question.choices.length; i++){
+               jb[i].setText(question.choices[i]);
+           }
+        }
+        boolean check(){ // Ta reda på vilken fråga som är aktuell. Returnera selected status på rätt svars "jb"
+            QuestionClass q = this.questions.getQuestionAtIndex(current);
+            return (jb[q.answerIndex].isSelected());
+        }
+        boolean oldcheck() // Bytte namn för att testa nya funktionen.
         {
             if(current==0)
                 return(jb[1].isSelected());
