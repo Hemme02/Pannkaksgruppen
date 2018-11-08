@@ -7,18 +7,11 @@ public class QuestionHandler {
         this.questions = new ArrayList<>();
         generateQuestions();
     }
-    private void print(){
-        for(QuestionClass q: this.questions){
-            for(String s: q.choices){
-                System.out.println(s);
-            }
-        }
-    }
 
-    private void generateQuestions(){
-        String question = "";
+    private void generateQuestions(){ // Fyller listan med frågor. Nya frågor läggs in här. Skapar ett frågeobject och lägger in det i listan.
+        String question;
         String[] choices = new String[4];
-        int answer = 0;
+        int answer;
 
         question = "Que1: Which one among these is not a primitive datatype?";
         choices[0] = "int";
@@ -102,7 +95,7 @@ public class QuestionHandler {
 
     }
 
-    public QuestionClass getQuestionAtIndex(int i){
+    public QuestionClass getQuestionAtIndex(int i){ // Returnerar frågan som finns på kallade indexet
         return this.questions.get(i);
     }
 }

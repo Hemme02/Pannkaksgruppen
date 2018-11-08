@@ -6,7 +6,7 @@
 
     class OnlineTest extends JFrame implements ActionListener
     {
-        QuestionHandler questions = new QuestionHandler();
+        QuestionHandler questions = new QuestionHandler(); // Måste få med ett object av nya klassen.
         JLabel l;
         JRadioButton jb[]=new JRadioButton[5];
         JButton b1,b2;
@@ -97,7 +97,7 @@
                 System.exit(0);
             }
         }
-        void set()
+        void set() // Istället för att ändra funktionen, kommentera bort all kod och kalla på den nya.
         {
             jb[4].setSelected(true);
             next();
@@ -158,7 +158,7 @@
             for(int i=0,j=0;i<=90;i+=30,j++)
                 jb[j].setBounds(50,80+i,200,20);
         }
-        private void next(){
+        private void next(){ // Hämta aktuell fråga, uppdatera texten. Loopa igenom svarsalternativen.
            QuestionClass question = this.questions.getQuestionAtIndex(current);
            l.setText(question.question);
            for(int i=0; i < question.choices.length; i++){

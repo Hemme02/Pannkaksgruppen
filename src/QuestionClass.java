@@ -1,3 +1,5 @@
+// Enkel klass för att spara frågan, svarsalternativ och index för rätt svar.
+
 public class QuestionClass {
     String question;
     String[] choices;
