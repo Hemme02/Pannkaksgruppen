@@ -1,4 +1,7 @@
 
+import org.junit.Before;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class OnlineTestTest {
@@ -56,6 +59,23 @@ public class OnlineTestTest {
 
             }
 
+        }
+
+    }
+    private OnlineTest onlineTest;
+
+    @Before
+    public void setUp() {
+        onlineTest = new OnlineTest("s");
+    }
+
+    @Test
+    public void testCheckCorrectAnswer(){
+        for (int i = 0; i < onlineTest.questions.questions.size(); i++) {
+            onlineTest.current = i;
+            int answer = onlineTest.questions.questions.get(i).answerIndex;
+            onlineTest.jb[answer].setSelected(true);
+            assertTrue(onlineTest.check());
         }
 
     }
