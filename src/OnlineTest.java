@@ -52,7 +52,7 @@
                     count=count+1;
                 current++;
                 set();
-                if(current==9)
+                if(current==questions.questions.size() - 1)
                 {
                     b1.setEnabled(false);
                     b2.setText("Result");
@@ -68,7 +68,7 @@
                 x++;
                 current++;
                 set();
-                if(current==9)
+                if(current==questions.questions.size() - 1)
                     b2.setText("Result");
                 setVisible(false);
                 setVisible(true);
