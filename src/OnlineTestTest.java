@@ -79,4 +79,38 @@ public class OnlineTestTest {
         }
 
     }
+
+    @Test
+    public void testCheckWrongAnswer(){
+        int[] allanswers = new int[4];
+        allanswers[0] = 1;
+        allanswers[1] = 2;
+        allanswers[2] = 3;
+        allanswers[3] = 4;
+
+        for (int i = 0; i < onlineTest.questions.questions.size(); i++) {
+            onlineTest.current = i;
+            int answer = onlineTest.questions.questions.get(i).answerIndex;
+            for (int j = 0; j < allanswers.length; j++) {
+                if (allanswers[j] == answer){
+                    continue;
+                }
+                else{
+                    onlineTest.jb[allanswers[j]].setSelected(true);
+                    assertFalse(onlineTest.check());
+                }
+            }
+        }
+    }
+
+    @Test
+    public void testOfNext(){
+        for (int i = 0; i < onlineTest.questions.questions.size() - 1; i++) {
+            onlineTest.current = i;
+            QuestionClass nextQuestion = onlineTest.questions.questions.get(i+1);
+            onlineTest.current++;
+            onlineTest.next();
+            assertEquals(onlineTest.l.getText(),nextQuestion.question);
+        }
+    }
 }

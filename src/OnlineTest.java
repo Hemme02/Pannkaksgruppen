@@ -158,7 +158,7 @@
             for(int i=0,j=0;i<=90;i+=30,j++)
                 jb[j].setBounds(50,80+i,200,20);
         }
-        private void next(){ // Hämta aktuell fråga, uppdatera texten. Loopa igenom svarsalternativen.
+        public void next(){ // Hämta aktuell fråga, uppdatera texten. Loopa igenom svarsalternativen.
            QuestionClass question = this.questions.getQuestionAtIndex(current);
            l.setText(question.question);
            for(int i=0; i < question.choices.length; i++){
