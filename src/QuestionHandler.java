@@ -101,6 +101,14 @@ public class QuestionHandler {
         answer = 3;
         this.questions.add(new QuestionClass(question, choices.clone(), answer));
 
+        question = "Que12: What is 1+1?";
+        choices[0] = "1";
+        choices[1] = "2";
+        choices[2] = "11";
+        choices[3] = "22";
+        answer = 1;
+        this.questions.add(new QuestionClass(question, choices.clone(), answer));
+
     }
 
     public QuestionClass getQuestionAtIndex(int i){ // Returnerar frågan som finns på kallade indexet
