@@ -93,6 +93,14 @@ public class QuestionHandler {
         answer = 2;
         this.questions.add(new QuestionClass(question, choices.clone(), answer));
 
+        question = "Que11: Which person is the coolest?";
+        choices[0] = "Peter";
+        choices[1] = "Lars";
+        choices[2] = "Jens";
+        choices[3] = "Jojjo";
+        answer = 3;
+        this.questions.add(new QuestionClass(question, choices.clone(), answer));
+
     }
 
     public QuestionClass getQuestionAtIndex(int i){ // Returnerar frågan som finns på kallade indexet
