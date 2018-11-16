@@ -109,6 +109,14 @@ public class QuestionHandler {
         answer = 1;
         this.questions.add(new QuestionClass(question, choices.clone(), answer));
 
+        question = "Que13: Whats the worst place on earth";
+        choices[0] = "North Korea";
+        choices[1] = "South Korea";
+        choices[2] = "Sahara";
+        choices[3] = "Knivsta";
+        answer = 3;
+        this.questions.add(new QuestionClass(question, choices.clone(), answer));
+
     }
 
     public QuestionClass getQuestionAtIndex(int i){ // Returnerar frågan som finns på kallade indexet
