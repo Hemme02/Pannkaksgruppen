@@ -15,7 +15,7 @@ public class QuestionHandlerTest {
     // Test for Arraylist. If new questions are added actual must be increased
     @Test
     public void questionHandler(){
-        assertEquals(test.questions.size(), 10);
+        assertEquals(test.questions.size(), 13);
     }
 
     @Test
