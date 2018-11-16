@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 
 import static org.junit.Assert.*;
 
