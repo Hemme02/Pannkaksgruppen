@@ -8,7 +8,9 @@ public class QuestionHandler {
         generateQuestions();
     }
 
-    private void generateQuestions(){ // Fyller listan med frågor. Nya frågor läggs in här. Skapar ett frågeobject och lägger in det i listan.
+    // Fyller listan med frågor. Nya frågor läggs in här. Skapar ett frågeobject och lägger in det i listan.
+    // When question is added, remember to increase QuestionHandlerTest test questionhandler with one
+    private void generateQuestions(){
         String question;
         String[] choices = new String[4];
         int answer;
@@ -127,6 +129,7 @@ public class QuestionHandler {
 
     }
 
+    // Function that returns question at the index supplied
     public QuestionClass getQuestionAtIndex(int i){ // Returnerar frågan som finns på kallade indexet
         return this.questions.get(i);
     }

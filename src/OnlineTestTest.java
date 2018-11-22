@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class OnlineTestTest {
-
+    // Original code test, still here to present 1.A
     @org.junit.Test
     public void check() {
         OnlineTest testclass = new OnlineTest("s");
@@ -49,8 +49,10 @@ public class OnlineTestTest {
         testclass.jb[2].setSelected(true);
         assertTrue(testclass.check());
 
+        // All the wrong answers in an array of arrays (hardcoded)
         int[][] all_wrong_answers = {{0, 2, 3}, {0, 1, 3}, {0, 1, 2}, {1, 2, 3}, {0, 1, 3}, {0, 1, 3}, {0, 2, 3}, {0, 1, 2}, {0, 2, 3}, {0, 1, 3}};
 
+        // Forloop that goes thru all question and checks that all the wrong choices returns false
         for (int i = 0; i != 10; i++){
             testclass.current = i;
             for (int answer:all_wrong_answers[i]) {
@@ -62,6 +64,8 @@ public class OnlineTestTest {
         }
 
     }
+
+    // new code test (dynamic)
     private OnlineTest onlineTest;
 
     @Before
@@ -69,6 +73,7 @@ public class OnlineTestTest {
         onlineTest = new OnlineTest("s");
     }
 
+    // Dynamic test that checks that when correct answer is selected the function returns true
     @Test
     public void testCheckCorrectAnswer(){
         for (int i = 0; i < onlineTest.questions.questions.size(); i++) {
@@ -80,6 +85,7 @@ public class OnlineTestTest {
 
     }
 
+    // Dynamic test that checks that when wrong answer is selected the function returns false
     @Test
     public void testCheckWrongAnswer(){
         int[] allanswers = new int[4];
@@ -103,6 +109,7 @@ public class OnlineTestTest {
         }
     }
 
+    // Dynamic test that checks that the function nextQuestion returns the next question
     @Test
     public void testOfNext(){
         for (int i = 0; i < onlineTest.questions.questions.size() - 1; i++) {

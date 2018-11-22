@@ -18,6 +18,7 @@ public class QuestionHandlerTest {
         assertEquals(test.questions.size(), 14);
     }
 
+    // Test that questions is created correct and are in the correct index
     @Test
     public void questionHandlerArray(){
         assertEquals(test.questions.get(1).question, "Que2: Which class is available to all the class automatically?");
@@ -28,6 +29,7 @@ public class QuestionHandlerTest {
         assertEquals(test.questions.get(1).answerIndex, 2);
     }
 
+    // Test that we get the correct question from function getQuestionAtIndex
     @Test
     public void getQuestionAtIndex(){
         QuestionClass question = test.getQuestionAtIndex(1);
